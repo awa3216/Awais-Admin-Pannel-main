@@ -24,7 +24,7 @@ interface ResetPasswordData {
   newPassword: string;
 }
 
-const API_URL = `http://34.201.147.207:3000`;
+const API_URL = `http://34.201.147.207:3000`; // Updated to HTTP
 
 export const signinUser = createAsyncThunk(
   "auth/signinUser",
