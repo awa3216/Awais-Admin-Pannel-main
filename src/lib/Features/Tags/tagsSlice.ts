@@ -69,7 +69,7 @@ export const addTags = createAsyncThunk<
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "https://34.201.147.207:3000/tags/add-tag",
+        "http://34.201.147.207:3000/tags/add-tag",
         credentials,
         {
           withCredentials: true,
@@ -105,7 +105,7 @@ export const getTags = createAsyncThunk<
   async (params, { rejectWithValue }) => {
     try {
       const token = localStorage.getItem("token");
-      let queryString = "https://34.201.147.207:3000/tags/all-tags";
+      let queryString = "http://34.201.147.207:3000/tags/all-tags";
       if (params && (params.page || params.limit)) {
         const queryParams = new URLSearchParams();
         if (params.page) queryParams.append('page', params.page.toString());
@@ -145,7 +145,7 @@ export const getTagsById = createAsyncThunk(
     try {
       const token = localStorage.getItem("token");
       const response = await axios.get(
-        `https://34.201.147.207:3000/tags/tagByID?id=${tagsId}`,
+        `http://34.201.147.207:3000/tags/tagByID?id=${tagsId}`,
         {
           withCredentials: true,
           headers: {
@@ -174,7 +174,7 @@ export const updateTags = createAsyncThunk(
     try {
       const token = localStorage.getItem("token");
       const response = await axios.put(
-        `https://34.201.147.207:3000/tags/edit-tag?id=${tagsId}`,
+        `http://34.201.147.207:3000/tags/edit-tag?id=${tagsId}`,
         payload,
         {
           withCredentials: true,
@@ -212,7 +212,7 @@ export const deleteTags = createAsyncThunk<
     try {
       const token = localStorage.getItem("token");
       const response = await axios.delete(
-        `https://34.201.147.207:3000/tags/delete-tag?id=${id}`,
+        `http://34.201.147.207:3000/tags/delete-tag?id=${id}`,
         {
           withCredentials: true,
           headers: {
