@@ -147,7 +147,7 @@ export const addYachts = createAsyncThunk<
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "http://localhost:5000/yacht/add-yacht",
+        "http://34.201.147.207:3000/yacht/add-yacht",
         credentials,
         {
           withCredentials: true,
@@ -185,7 +185,7 @@ export const getYachts = createAsyncThunk<
     try {
       const token = localStorage.getItem("token");
       const response = await axios.get(
-        `http://localhost:5000/yacht/all-yachts?page=${page}&limit=${limit}`,
+        `http://34.201.147.207:3000/yacht/all-yachts?page=${page}&limit=${limit}`,
         {
           withCredentials: true,
           headers: {
@@ -219,7 +219,7 @@ export const getYachtsById = createAsyncThunk(
     try {
       const token = localStorage.getItem("token");
       const response = await axios.get(
-        `http://localhost:5000/yacht?id=${yachtsId}`,
+        `http://34.201.147.207:3000/yacht?id=${yachtsId}`,
         {
           withCredentials: true,
           headers: {
@@ -248,7 +248,7 @@ export const updateYachts = createAsyncThunk(
     try {
       const token = localStorage.getItem("token");
       const response = await axios.put(
-        `http://localhost:5000/yacht/edit-yacht?id=${yachtsId}`,
+        `http://34.201.147.207:3000/yacht/edit-yacht?id=${yachtsId}`,
         payload,
         {
           withCredentials: true,
@@ -287,7 +287,7 @@ export const deleteYachts = createAsyncThunk<
     try {
       const token = localStorage.getItem("token");
       const response = await axios.delete(
-        `http://localhost:5000/yacht/delete-yacht?id=${id}`,
+        `http://34.201.147.207:3000/yacht/delete-yacht?id=${id}`,
         {
           withCredentials: true,
           headers: {
@@ -325,7 +325,7 @@ export const publishYacht = createAsyncThunk<
         status: status
       };
       const response = await axios.patch(
-        `http://localhost:5000/yacht/update-status?id=${yachtId}`,
+        `http://34.201.147.207:3000/yacht/update-status?id=${yachtId}`,
         payload,
         {
           withCredentials: true,
