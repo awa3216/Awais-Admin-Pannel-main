@@ -5,7 +5,7 @@ interface NewYachtsFormField {
   label: string;
   required?: string;
   placeholder?: string;
-  type?: "dropdown" | "number" | "text" | "checkbox";
+  type?: "dropdown" | "number" | "text" | "checkbox" | "date";
   options?: string[];
   icon?: IconType;
   iconone?: IconType;
