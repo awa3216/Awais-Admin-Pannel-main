@@ -138,6 +138,7 @@ const AddNewYachts: React.FC = () => {
       "Daytrip Price (Euro)": "",
       // "Daytrip Price (THB)": "",
       // "Daytrip Price (USD)": "",
+      "Created Date": "",
       "Primary Image": null as unknown as File,
       "Gallery Images": [] as File[],
       // Price: "",
@@ -181,6 +182,7 @@ const AddNewYachts: React.FC = () => {
             "Day Trip Price": true,
             "Overnight Price": true,
             "Daytrip Price (Euro)": true,
+            "Created Date": true,
             // "Daytrip Price (THB)": true,
             // "Daytrip Price (USD)": true,
             "Primary Image": {},
@@ -228,6 +230,7 @@ const AddNewYachts: React.FC = () => {
             dayTripPrice: values["Day Trip Price"],
             overnightPrice: values["Overnight Price"],
             daytripPriceEuro: values["Daytrip Price (Euro)"],
+            createdDate: values["Created Date"],
             // daytripPriceTHB: values["Daytrip Price (THB)"] ?? "",
             // daytripPriceUSD: values["Daytrip Price (USD)"] ?? "",
             primaryImage: values["Primary Image"] as File,
@@ -304,6 +307,7 @@ const AddNewYachts: React.FC = () => {
                     "";
                   const isDropdown = field.type === "dropdown";
                   const isNumber = ["Length", "Cabins", "Bathrooms", "Passenger Day Trip", "Passenger Overnight", "Guests", "Day Trip Price", "Overnight Price", "Daytrip Price (Euro)", "Built", "Cruising Speed", "Length Overall", "Fuel Capacity", "Water Capacity"].includes(field.label);
+                  const isDate = field.type === "date";
                   const isPrimaryUpload = field.label === "Primary Image";
                   const isFileUpload = field.label === "Gallery Images";
                   const isCheckbox = field.type === "checkbox";
@@ -636,6 +640,27 @@ const AddNewYachts: React.FC = () => {
                                 )}
                             </div>
                           </div>
+                          {fieldError && (
+                            <p className="text-[#DB2828] text-sm mt-1">
+                              {typeof formik.errors[fieldName] === "string" &&
+                                formik.errors[fieldName]}
+                            </p>
+                          )}
+                        </>
+                      ) : isDate ? (
+                        <>
+                          <input
+                            type="date"
+                            name={fieldName}
+                            value={formik.values[fieldName] as string}
+                            onChange={(e) => {
+                              formik.handleChange(e);
+                              formik.setFieldTouched(fieldName, true, false);
+                            }}
+                            onBlur={formik.handleBlur}
+                            className={`placeholder:text-[#999999] outline-none text-[#222222] w-full bg-[#F0F2F4] rounded-lg px-3 py-2  ${fieldError ? "border border-[#DB2828]" : ""
+                              }`}
+                          />
                           {fieldError && (
                             <p className="text-[#DB2828] text-sm mt-1">
                               {typeof formik.errors[fieldName] === "string" &&

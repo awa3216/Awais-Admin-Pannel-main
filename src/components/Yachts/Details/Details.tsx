@@ -43,6 +43,7 @@ const Yachts: React.FC<CustomersProps> = ({ goToNextTab }) => {
                 { label: "Day Trip Price", data: yachts?.dayTripPrice || "N/A" },
                 { label: "Overnight Price", data: yachts?.overnightPrice || "N/A" },
                 { label: "Day Trip Price Euro", data: `${yachts?.daytripPriceEuro}€` || "N/A" },
+                { label: "Created Date", data: formatDateToDDMMYY(yachts?.createdDate) || "N/A" },
                 { label: "Length Range", optional: "(Optional)", data: yachts?.lengthRange || "N/A" },
                 { label: "Badge", optional: "(Optional)", data: yachts?.badge || "N/A" },
                 { label: "Built", optional: "(Optional)", data: formatDateToDDMMYY(yachts?.built || "N/A") },

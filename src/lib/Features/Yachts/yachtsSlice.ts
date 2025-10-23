@@ -18,6 +18,7 @@ export interface AddYachtsPayload {
   // daytripPriceUSD: string;
   overnightPrice: string;
   daytripPriceEuro: string;
+  createdDate: string;
   // daytripPriceTHB: string;
   priceEditor?: string;
   tripDetailsEditor?: string;
@@ -63,6 +64,7 @@ export interface YachtsApiResponse {
   // daytripPriceUSD: string;
   overnightPrice: string;
   daytripPriceEuro: string;
+  createdDate: string;
   // daytripPriceTHB: string;
   primaryImage: string;
   galleryImages: string[];

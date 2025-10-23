@@ -87,6 +87,7 @@ export const NewYachtsData: NewYachtsFormSection[] = [
       { label: "Daytrip Price (Euro)", placeholder: "e.g,. 800 EUR" },
       // { label: "Daytrip Price (THB)", placeholder: "e.g,. 800 THB" },
       // { label: "Daytrip Price (USD)", placeholder: "e.g,. 800 USD" },
+      { label: "Created Date", placeholder: "Select date", type: "date" },
       { label: "Primary Image", placeholder: "" },
       {
         label: "Video Link",
