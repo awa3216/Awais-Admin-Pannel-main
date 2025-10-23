@@ -138,7 +138,7 @@ const AddNewYachts: React.FC = () => {
       "Daytrip Price (Euro)": "",
       // "Daytrip Price (THB)": "",
       // "Daytrip Price (USD)": "",
-      "Created Date": "",
+      "Created Date": new Date().toISOString().split('T')[0],
       "Primary Image": null as unknown as File,
       "Gallery Images": [] as File[],
       // Price: "",
