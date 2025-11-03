@@ -24,7 +24,7 @@ interface ResetPasswordData {
   newPassword: string;
 }
 
-const API_URL = `https://34.201.147.207`;
+const API_URL = `https://phuket.007-lagoon560.com`;
 
 export const signinUser = createAsyncThunk(
   "auth/signinUser",

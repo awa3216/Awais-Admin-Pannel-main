@@ -149,7 +149,7 @@ export const addYachts = createAsyncThunk<
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "https://34.201.147.207/yacht/add-yacht",
+        "https://phuket.007-lagoon560.com/yacht/add-yacht",
         credentials,
         {
           withCredentials: true,
@@ -187,7 +187,7 @@ export const getYachts = createAsyncThunk<
     try {
       const token = localStorage.getItem("token");
       const response = await axios.get(
-        `https://34.201.147.207/yacht/all-yachts?page=${page}&limit=${limit}`,
+        `https://phuket.007-lagoon560.com/yacht/all-yachts?page=${page}&limit=${limit}`,
         {
           withCredentials: true,
           headers: {
@@ -221,7 +221,7 @@ export const getYachtsById = createAsyncThunk(
     try {
       const token = localStorage.getItem("token");
       const response = await axios.get(
-        `https://34.201.147.207/yacht?id=${yachtsId}`,
+        `https://phuket.007-lagoon560.com/yacht?id=${yachtsId}`,
         {
           withCredentials: true,
           headers: {
@@ -250,7 +250,7 @@ export const updateYachts = createAsyncThunk(
     try {
       const token = localStorage.getItem("token");
       const response = await axios.put(
-        `https://34.201.147.207/yacht/edit-yacht?id=${yachtsId}`,
+        `https://phuket.007-lagoon560.com/yacht/edit-yacht?id=${yachtsId}`,
         payload,
         {
           withCredentials: true,
@@ -289,7 +289,7 @@ export const deleteYachts = createAsyncThunk<
     try {
       const token = localStorage.getItem("token");
       const response = await axios.delete(
-        `https://34.201.147.207/yacht/delete-yacht?id=${id}`,
+        `https://phuket.007-lagoon560.com/yacht/delete-yacht?id=${id}`,
         {
           withCredentials: true,
           headers: {
@@ -327,7 +327,7 @@ export const publishYacht = createAsyncThunk<
         status: status
       };
       const response = await axios.patch(
-        `https://34.201.147.207/yacht/update-status?id=${yachtId}`,
+        `https://phuket.007-lagoon560.com/yacht/update-status?id=${yachtId}`,
         payload,
         {
           withCredentials: true,

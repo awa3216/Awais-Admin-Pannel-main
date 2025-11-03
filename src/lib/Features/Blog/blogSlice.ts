@@ -100,7 +100,7 @@ export const addBlog = createAsyncThunk<
       }
 
       const response = await axios.post(
-        "https://34.201.147.207/blog/add-blog",
+        "https://phuket.007-lagoon560.com/blog/add-blog",
         formData,
         {
           withCredentials: true,
@@ -138,7 +138,7 @@ export const getBlogs = createAsyncThunk<
     try {
       const token = localStorage.getItem("token");
       const response = await axios.get(
-        `https://34.201.147.207/blog/all-blogs?page=${page}&limit=${limit}`,
+        `https://phuket.007-lagoon560.com/blog/all-blogs?page=${page}&limit=${limit}`,
         {
           withCredentials: true,
           headers: {
@@ -175,7 +175,7 @@ export const getBlogById = createAsyncThunk<
       const token = localStorage.getItem("token");
 
       const response = await axios.get(
-        `https://34.201.147.207/blog/blogByID?id=${blogId}`,
+        `https://phuket.007-lagoon560.com/blog/blogByID?id=${blogId}`,
         {
           withCredentials: true,
           headers: { Authorization: `Bearer ${token}` },
@@ -237,7 +237,7 @@ export const updateBlog = createAsyncThunk<
       }
 
       const response = await axios.put(
-        `https://34.201.147.207/blog/edit-blog?id=${blogId}`,
+        `https://phuket.007-lagoon560.com/blog/edit-blog?id=${blogId}`,
         formData,
         {
           withCredentials: true,
@@ -294,7 +294,7 @@ export const deleteBlog = createAsyncThunk<
       try {
         // Try yacht-style endpoint
         response = await axios.delete(
-          `https://34.201.147.207/blog/delete-blog?id=${blogId}`,
+          `https://phuket.007-lagoon560.com/blog/delete-blog?id=${blogId}`,
           {
             withCredentials: true,
             headers: {
@@ -305,7 +305,7 @@ export const deleteBlog = createAsyncThunk<
       } catch {
         // Try blog-specific endpoint
         response = await axios.delete(
-          `https://34.201.147.207/blog/delete-blog/${blogId}`,
+          `https://phuket.007-lagoon560.com/blog/delete-blog/${blogId}`,
           {
             withCredentials: true,
             headers: {
@@ -351,7 +351,7 @@ export const publishBlog = createAsyncThunk<
       try {
         // Try yacht-style endpoint
         response = await axios.patch(
-          `https://34.201.147.207/blog/update-status?id=${blogId}`,
+          `https://phuket.007-lagoon560.com/blog/update-status?id=${blogId}`,
           { status },
           {
             withCredentials: true,
@@ -365,7 +365,7 @@ export const publishBlog = createAsyncThunk<
         try {
           // Try blog-specific endpoint
           response = await axios.patch(
-            `https://34.201.147.207/blog/update-status${blogId}`,
+            `https://phuket.007-lagoon560.com/blog/update-status${blogId}`,
             { status },
             {
               withCredentials: true,
@@ -378,7 +378,7 @@ export const publishBlog = createAsyncThunk<
         } catch {
           // Try using the update-blog endpoint with status
           response = await axios.put(
-            `https://34.201.147.207/blog/update-status${blogId}`,
+            `https://phuket.007-lagoon560.com/blog/update-status${blogId}`,
             { status },
             {
               withCredentials: true,
